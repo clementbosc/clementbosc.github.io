@@ -1,5 +1,17 @@
-.post-layout{
-  time{
+.post-layout {
+  @import "highlighter";
+
+  time {
     font-size: smaller;
   }
+
+  code.highlighter-rouge {
+    color: var(--green);
+  }
+
+  img {
+    display: block;
+    margin: auto;
+  }
+
 }

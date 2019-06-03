@@ -8,4 +8,12 @@
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 #4a4a4a;
   }
+
+  li.post{
+    border-bottom: #cdcdcd 1px solid;
+
+    &:last-child{
+      border-bottom: none;
+    }
+  }
 }
