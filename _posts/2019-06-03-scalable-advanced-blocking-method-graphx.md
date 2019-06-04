@@ -15,6 +15,9 @@ GraphX is a component of Spark which allow parallel graph processing. It is base
 
 A graph is composed of nodes (*vertex*) and edges on which we can attach properties and therefore see them as DB tables : vertices table contains the id of the node and its attributes and edges table contains a source node (*srcId*), a target node (*dstId*) and edge attributes.
 
+<br/>
+![Graph exemple showing links between persons from a same university](/assets/img/2019_06_03_graphx_tables.png)
+<br/>
 
 ## Use case : a record linkage blocking method
 
@@ -133,6 +136,6 @@ Note the id of the node must be a `Long` and the implementation must be done in 
 
 We can now compare and merge each record from a same cluster because they potentially represent the same person and drasticly reduce the compute time.
 
-Special thanks to [David Gougaud][david-gougaud-linkedin] who design this blocking method during his engineer graduation thesis.
+Special thanks to [David Gougaud][david-gougaud-linkedin] who designed this blocking method during his engineer graduation thesis.
 
 [david-gougaud-linkedin]: https://fr.linkedin.com/in/david-gougaud-ab87b9b6/en
