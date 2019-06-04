@@ -21,7 +21,7 @@ A graph is composed of nodes (*vertex*) and edges on which we can attach propert
 
 ## Use case : a record linkage blocking method
 
-When I was in internship, I worked on a project for the french airline company Air France : the idea was to recognize an anonymous customer from a flight to another. So basically we used multiple data sources to compare and merge records that represent the same person in real life. This kind of process is called *Record Linkage*.
+When I was in internship, I worked on a project for an airline company : the idea was to recognize an anonymous customer from a flight to another. So basically we used multiple data sources to compare and merge records that represent the same person in real life. This kind of process is called *Record Linkage*.
 
 A typical *Record linkage* algorithm can be decomposed in 3 steps :
 * **Schema alignement** : prepare, clean and standardize the data to work with from the different sources
@@ -34,18 +34,18 @@ Good question ! GraphX take place in the blocking step : we create a graph where
 
 
 {% highlight plain_text %}
-+---+-----------+--------+----------+------------------------+----------+
-|id |firstName  |lastName|phone     |mail                    |lastFlight|
-+---+-----------+--------+----------+------------------------+----------+
-|1  |JEAN       |MART    |0630169073|jean@michel.fr          |SGBGSL    |
-|2  |JEAN-MICHEL|MARTIN  |0561402726|jean@michel.fr          |J285RQ    |
-|3  |JEAN       |MARTIN  |0630169073|jojo@martin.fr          |J285RQ    |
-|4  |JEAN-MICH  |MARTIN  |0731020503|jojo@martin.fr          |YTU545    |
-|5  |ROBERT     |DUPONT  |0807060803|rob.dup@gmail.com       |RUHFDS    |
-|6  |ROBERT     |DUPOND  |0807060803|robert.dupond@hotmail.fr|JHGFDS    |
-|7  |ROB        |DUPOND  |0304067328|rob.dup@gmail.com       |IUYTRE    |
-|8  |RBERT      |DUPOND  |0304067328|robert.dupond@hotmail.fr|POIJK5    |
-+---+-----------+--------+----------+------------------------+----------+
++---+-----------+----------+------------+------------------------+----------+
+|id |firstName  |lastName  |phone       |mail                    |lastFlight|
++---+-----------+----------+------------+------------------------+----------+
+|1  |HUGO       |REIEES    |+33630169073|hugo@reyes.com          |ABCDEF    |
+|2  |HUGO HURLEY|REYES     |+33561402726|hugo@reyes.com          |TYUIOP    |
+|3  |HUGO       |REYES     |+33630169073|h.reyes@gmail.com       |TYUIOP    |
+|4  |HURLEY     |REYES     |+33731020503|h.reyes@gmail.com       |YTU545    |
+|5  |ROBERT     |SMITH     |+33807060803|rob.smith@gmail.com     |XXXXXX    |
+|6  |ROBERT     |SMITH     |+33807060803|robert.smith@hotmail.fr |YYYYYY    |
+|7  |ROB        |SMITH JR. |+33304067328|rob.smith@gmail.com     |IUYTRE    |
+|8  |RBERT      |SMITH     |+33304067328|robert.smith@hotmail.fr |POIJK5    |
++---+-----------+----------+------------+------------------------+----------+
 {% endhighlight %}
 
 Our dataset (very simplified for the purpose of this article) is composed of customers/travellers with an email, a phone number and their last flight booking. These records represent the nodes of our graph.
@@ -93,18 +93,18 @@ dataset
 // +-----+-----+--------------------------+
 // |srcId|dstId|key                       |
 // +-----+-----+--------------------------+
-// |1    |2    |M:jean@michel.fr          |
-// |1    |3    |P:0630169073              |
-// |3    |4    |M:jojo@martin.fr          |
-// |2    |3    |F:J285RQ                  |
-// |5    |6    |P:0807060803              |
-// |6    |8    |M:robert.dupond@hotmail.fr|
-// |8    |7    |P:0304067328              |
-// |5    |7    |M:rob.dup@gmail.com       |
+// |1    |2    |M:hugo@reyes.com          |
+// |1    |3    |P:+33630169073            |
+// |3    |4    |M:h.reyes@gmail.com       |
+// |2    |3    |F:TYUIOP                  |
+// |5    |6    |P:+33807060803            |
+// |6    |8    |M:robert.smith@hotmail.fr |
+// |8    |7    |P:+33304067328            |
+// |5    |7    |M:rob.smith@gmail.com     |
 // +-----+-----+--------------------------+
 {% endhighlight %}
 
-Here, we can clearly see that we have to distinct customers : Jean-Michel Martin and Robert Dupond.
+Here, we can clearly see that we have to distinct customers : Hugo Reyes and Robert Smith.
 So, how can we group together these two entities ? Using the **connected components** of course !
 
 Some reminders from graph theory : A non directed graph *G=(V,E)* is connected when it has at least one vertex and there is a path between every pair of vertices. In our case, we want to find every connected subgraph in our graph.
