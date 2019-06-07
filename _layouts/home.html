@@ -47,7 +47,7 @@ layout: default
                       {% endfor %}
                     </div>
 
-                    {%- if site.show_excerpts && post.summary -%}
+                    {%- if site.show_excerpts and post.summary -%}
                     <small>{{ post.summary }}</small>
                     {%- endif -%}
                 </li>
