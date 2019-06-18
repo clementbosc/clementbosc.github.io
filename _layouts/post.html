@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="post-layout my-5">
+<div class="post-layout my-md-5 my-3">
     <a class="back mb-2 d-block" href="{{ "/" | relative_url }}">
         <i class="fas fa-arrow-left"></i>&nbsp;
         <span>Retour à l'Accueil</span>
@@ -11,9 +11,9 @@ layout: default
         <header class="post-header">
             <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
 
-            <div class="d-flex align-items-center mb-3">
+            <div class="d-flex align-items-md-center mb-3 flex-column flex-md-row">
 
-              <p class="post-meta mb-0">
+              <p class="post-meta mb-2 mb-md-0">
                   <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
                       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
                       {{ page.date | date: date_format }}
@@ -23,7 +23,7 @@ layout: default
                                                                                                 itemprop="name">{{ page.author }}</span></span>
                   {%- endif -%}
               </p>
-              &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+              <span class="d-none d-md-block">&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span>
               <div class="tags mb-0">
                 {% for tag in page.tags %}
                 <span class="badge">#{{tag}}</span>
@@ -44,4 +44,10 @@ layout: default
 
         <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
     </article>
+    <br>
+    <hr>
+    <h4>Comments</h4>
+    <div class="fb-comments" data-href="{{ site.url }}{{ page.url }}" data-width="100%" data-numposts="5"></div>
 </div>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=444773896312438&autoLogAppEvents=1"></script>

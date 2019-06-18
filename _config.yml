@@ -19,9 +19,10 @@ google_site_verif: mJvthh0Ep4TrVv1jrJXA3Z6rqDqidVPvhAT4ar1kWjM
 description: >- # this means to ignore newlines until "baseurl:"
   This is my personal blog to share my thoughts, ideas and projects. I love data, web and new tech ✌
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://clementbosc.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://clementbosc.fr" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: clementast
 github_username:  clementbosc
+facebook_app_id: 444773896312438
 
 
 
