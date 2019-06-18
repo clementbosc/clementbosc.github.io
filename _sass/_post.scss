@@ -13,7 +13,16 @@
   img {
     display: block;
     margin: auto;
-    max-width: 100%;
+    max-width: 80%;
+  }
+
+  img + em {
+    font-style: normal;
+    font-weight: lighter;
+    font-size: .85rem;
+    text-align: center;
+    display: block;
+    padding: 10px 0 0 0;
   }
 
 }

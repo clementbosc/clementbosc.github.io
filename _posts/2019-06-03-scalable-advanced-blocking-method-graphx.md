@@ -17,6 +17,7 @@ A graph is composed of nodes (*vertex*) and edges on which we can attach propert
 
 <br/>
 ![Graph exemple showing links between persons from a same university](/assets/img/2019_06_03_graphx_tables.png)
+*Example graph showing links between people within a university*
 <br/>
 
 ## Use case : a record linkage blocking method

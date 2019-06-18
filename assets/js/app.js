@@ -1,0 +1,1 @@
+mediumZoom('.post-layout img')
