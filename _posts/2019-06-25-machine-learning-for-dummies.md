@@ -1242,7 +1242,9 @@ Pour cela voici quelques pistes :
 
 * [Challenge Kaggle "Titanic: Machine Learning from Disaster"][titanic_kaggle]
 * [Titanic Data Science Solutions][kaggle_kernel_sol]
-
+* [Understanding Confusion Matrix](https://towardsdatascience.com/understanding-confusion-matrix-a9ad42dcfd62)
+* [Une petite histoire du Machine Learning](https://www.quantmetry.com/une-petite-histoire-du-machine-learning)
+* [DATA SCIENCE, SQLI](https://www.sqli-digital-experience.com/solutions/data-et-analytics/data-science)
 
 [titanic_kaggle]: https://www.kaggle.com/c/titanic
 [kaggle_kernel_sol]: https://www.kaggle.com/startupsci/titanic-data-science-solutions
