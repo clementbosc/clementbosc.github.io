@@ -398,7 +398,7 @@ train.describe()
 * Environ 38% des personnes de notre échantillon ont survécu, ce qui est représentatif car ce nombre est de 32% sur l'ensemble du Titanic.
 * La plupart des passagers ( > 75%) n'ont pas voyagé avec des parents ou des enfants.
 * Environ 30 % des passagers ont des frères et soeurs et/ou un.e conjoint.e.
-* Il n'y a pas beaucoup de personnes agées et le prix des billets est relativement faible ( au moins 75% ont payé moins de 31\\$ mais certains ont payé jusqu'à 512\\$).
+* Il n'y a pas beaucoup de personnes agées et le prix des billets est relativement faible ( au moins 75% ont payé moins de 31$ mais certains ont payé jusqu'à 512$).
 
 #### Quelle est la distribution des valeurs catégorielles ?
 
@@ -861,10 +861,10 @@ Dans ce tutoriel, nous utiliserons la librairie open source `sklearn` (ou `sciki
 Dans un 1er temps, nous allons créer nos ensembles train/test/validation. Nous utiliserons le jeu de test fourni et créerons l'ensemble de validation en prenant 20% de l'ensemble de train. Nous utiliserons pour cela la fonction `train_test_split` déjà implémentée dans `sklearn`.
 
 Les algorithmes sont tous basés sur la même structure et attendent en entrée de la fonction d'apprentissage (`.fit(X_train, y_train)`):
-* **X_train**, qui est une matrice ($nb\_features * nb\_exemples$)
-* **y_train**, qui est un tableau de taille $nb\_exemples$ contenant les classes pour chaque exemple
+* **X_train**, qui est une matrice ($$nb\_features * nb\_exemples$$)
+* **y_train**, qui est un tableau de taille $$nb\_exemples$$ contenant les classes pour chaque exemple
 
-Une fois la phase d'apprentissage terminée (très rapide pour des petits ensembles comme les notres), il convient d'évaluer le modèle construit avec l'ensemble de validation. On peut utiliser une métrique élémentaire, la justesse (`accuracy`) qui consiste à calculer le ratio $\frac{nb\_bien\_classés}{nb\_total}$. L'accuracy peut être calculée avec le fonction `.score(X_val, y_val)` du modèle.
+Une fois la phase d'apprentissage terminée (très rapide pour des petits ensembles comme les notres), il convient d'évaluer le modèle construit avec l'ensemble de validation. On peut utiliser une métrique élémentaire, la justesse (`accuracy`) qui consiste à calculer le ratio $$\frac{nb\_bien\_classés}{nb\_total}$$. L'accuracy peut être calculée avec le fonction `.score(X_val, y_val)` du modèle.
 
 Enfin, une fois que le modèle construit est satisfaisant, on peut prédire les classes de notre ensemble de test pour une évaluation non biaisée (afin d'éviter le phénomène de sur-apprentissage). Pour cela on utilise la fonction `.predict(X_test)`.
 
