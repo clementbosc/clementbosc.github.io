@@ -23,6 +23,7 @@ De nombreux algorithmes présentés dans ce tutoriel ont été imaginés à la f
 #### Méthodologie
 
 ![](/assets/img/ml_dummies/workflow_small.png)
+<br/>
 
 Les principales étapes d'un processus classique de Machine Learning sont les suivantes :
 * **1. Analyse** : réaliser des statistiques descriptives sur les données, faire quelques hypothèses pour mieux saisir la nature du problème.
@@ -898,7 +899,7 @@ Un problème avec le "vote majoritaire" apparaît lorsque les classes ont une r�
 
 Voici une animation pour illustrer un cas où K = 5 :
 
-![](/assets/img/ml_dummies/knn.gif)
+![](/assets/img/ml_dummies/knn.png)
 
 
 {% highlight python %}
@@ -919,8 +920,6 @@ acc_knn
 #### DecisionTreeClassifier
 
 Pour faire une prédiction, les Decision Trees utilisent un ensemble de règles de décision « If Then Else » sur les features. Cette méthode permet de décomposer un ensemble de données en sous-ensembles de plus en plus petits. On peut ainsi assigner aux sous-ensemble finaux une classe (0 ou 1 pour une classification binaire). Le but du modèle va être de créer des sous-ensembles homogènes (contenant des exemples de même classe) pour minimiser l’erreur de ses prédictions.
-
-![](/assets/img/ml_dummies/decision_tree.gif)
 
 
 {% highlight python %}
@@ -983,7 +982,7 @@ La régression logistique fut l'un des premiers algorithmes de Machine Learning 
 Pour que cela ait du sens, il faut bien-sûr que les points de l'ensemble soient **linéairement séparables** (ce qui n'est pas forcement facile à savoir en pratique).
 
 ![](/assets/img/ml_dummies/linear_non_linear.PNG)
-
+<br/>
 Dans notre cas, (deux classes) on parle de **Binomial Logistic Regression**. Dans les cas où l'on a plus de classes, on parle de **Multinomial Logistic Regression**.
 
 
@@ -1045,8 +1044,9 @@ Le SVM est capable de réaliser 2 types de séparation :
 * **linéaire** : quand les données sont linéairement séparables.
 * **non linéaire** : on utilise un "noyau" (kernel) qui va transformer les features existantes et en créer de nouvelles afin de pouvoir représenter les données de manière linéairement séparable. Cette opération est transparente pour l'utilisateur. Il existe plusieurs types de noyaux en fonction de la répartition spatiale des données : Noyau linéaire, polynomial, sigmoïde, "Radial Basic Function" (RBF)...
 
-![](/assets/img/ml_dummies/svm.gif)
-
+<br/>
+![](/assets/img/ml_dummies/svm.png)
+<br/>
 
 
 {% highlight python %}
@@ -1244,7 +1244,6 @@ Pour cela voici quelques pistes :
 * [Titanic Data Science Solutions][kaggle_kernel_sol]
 * [Understanding Confusion Matrix](https://towardsdatascience.com/understanding-confusion-matrix-a9ad42dcfd62)
 * [Une petite histoire du Machine Learning](https://www.quantmetry.com/une-petite-histoire-du-machine-learning)
-* [DATA SCIENCE, SQLI](https://www.sqli-digital-experience.com/solutions/data-et-analytics/data-science)
 
 [titanic_kaggle]: https://www.kaggle.com/c/titanic
 [kaggle_kernel_sol]: https://www.kaggle.com/startupsci/titanic-data-science-solutions
