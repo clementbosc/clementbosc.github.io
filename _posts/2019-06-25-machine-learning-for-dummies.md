@@ -897,7 +897,7 @@ La phase d’apprentissage consiste ici seulement à stocker les vecteurs de fea
 
 Un problème avec le "vote majoritaire" apparaît lorsque les classes ont une répartition inégale. En effet, si une classe est sur-représentée, elle pourra être plus représentée dans les plus proches voisins. Une méthode pour contrer ce problème est d’attribuer un poids plus important aux voisins les plus proches (paramètre `weight='distance'` dans l’implémentation de sklearn).
 
-Voici une animation pour illustrer un cas où K = 5 :
+Voici un schéma pour illustrer un cas où K = 5 :
 
 ![](/assets/img/ml_dummies/knn.png)
 
