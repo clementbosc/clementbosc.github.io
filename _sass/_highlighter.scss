@@ -34,7 +34,7 @@ figure.highlight {
 
   /* --- Operators --- */
   .o { color: $operator; } /* Operator */
-  .ow { color: $operator; } /* Word */
+  .ow { color: $operator; font-weight: bold; } /* Word */
 
   /* --- Comments --- */
   .c { color: $comment; font-style: italic; } /* Comment */
@@ -54,15 +54,15 @@ figure.highlight {
   .na { color: $secondary; } /* Attribute */
   .nx { color: $secondary; } /* Other */
   .nc { color: $namespace; } /* Class */
-  .nn { color: $namespace; } /* Namespace */
+  .nn { color: $primary; } /* Namespace */
   .no { color: $scoped; } /* Constant */
   .ne { color: $scoped; } /* Exception */
   .nd { color: $operator; } /* Decorator */
   .nt { color: $operator; } /* Tag */
 
   /* --- Keywords --- */
-  .kn { color: $operator; } /* Namespace */
-  .k { color: $keyword; } /* Keyword */
+  .kn { color: $operator; font-weight: bold; } /* Namespace */
+  .k { color: $keyword; font-weight: bold; } /* Keyword */
   .kc { color: $keyword; } /* Constant */
   .kd { color: $keyword; } /* Declaration */
   .kp { color: $keyword; } /* Pseudo */
